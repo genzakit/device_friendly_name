@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 
 import android.content.Context;
 import android.provider.Settings;
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -23,6 +24,13 @@ public class DeviceFriendlyNamePlugin implements FlutterPlugin, MethodCallHandle
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
+        channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "device_friendly_name");
+        channel.setMethodCallHandler(new DeviceFriendlyNamePlugin());
+    }
+
+    private void onAttachedToEngine(Context applicationContext, FlutterPluginBinding flutterPluginBinding) {
+        this.context = applicationContext;
+        System.out.println(applicationContext);
         channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "device_friendly_name");
         channel.setMethodCallHandler(this);
     }
