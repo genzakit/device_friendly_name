@@ -1,3 +1,3 @@
 ## 1.0.0
 
-* TODO: Release library
+* Release library
