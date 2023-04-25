@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.genza.device_friendly_name_example">
+    package="com.genzadev.device_friendly_name_example">
    <application
         android:label="device_friendly_name_example"
         android:name="${applicationName}"

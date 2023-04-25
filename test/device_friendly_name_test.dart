@@ -10,10 +10,7 @@ class MockDeviceFriendlyNamePlatform with MockPlatformInterfaceMixin implements 
   Future<String?> getPlatformVersion() => Future.value('42');
 
   @override
-  Future<String?> getDeviceFriendlyName() {
-    // TODO: implement getDeviceFriendlyName
-    throw UnimplementedError();
-  }
+  Future<String?> getDeviceFriendlyName() => Future.value('Genza Device');
 }
 
 void main() {
@@ -29,5 +26,13 @@ void main() {
     DeviceFriendlyNamePlatform.instance = fakePlatform;
 
     expect(await deviceFriendlyNamePlugin.getPlatformVersion(), '42');
+  });
+
+  test('getDeviceFriendlyName', () async {
+    DeviceFriendlyName deviceFriendlyNamePlugin = DeviceFriendlyName();
+    MockDeviceFriendlyNamePlatform fakePlatform = MockDeviceFriendlyNamePlatform();
+    DeviceFriendlyNamePlatform.instance = fakePlatform;
+
+    expect(await deviceFriendlyNamePlugin.getDeviceFriendlyName(), 'Genza Device');
   });
 }

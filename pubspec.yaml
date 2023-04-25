@@ -1,6 +1,6 @@
 name: device_friendly_name
 description: Retrieve a friendly name for the current device
-version: 1.0.2
+version: 1.0.4
 homepage: https://github.com/genzadev/device_friendly_name
 
 environment:
@@ -35,7 +35,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.genza.device_friendly_name
+        package: com.genzadev.device_friendly_name
         pluginClass: DeviceFriendlyNamePlugin
       ios:
         pluginClass: DeviceFriendlyNamePlugin

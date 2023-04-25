@@ -17,7 +17,7 @@ class MethodChannelDeviceFriendlyName extends DeviceFriendlyNamePlatform {
 
   @override
   Future<String?> getDeviceFriendlyName() async {
-    final version = await methodChannel.invokeMethod<String>('getDeviceFriendlyName');
-    return version;
+    final name = await methodChannel.invokeMethod<String>('getDeviceFriendlyName');
+    return name;
   }
 }
