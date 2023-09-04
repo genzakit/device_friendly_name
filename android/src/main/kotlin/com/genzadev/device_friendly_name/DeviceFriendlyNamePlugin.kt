@@ -31,9 +31,10 @@ class DeviceFriendlyNamePlugin: FlutterPlugin, MethodCallHandler {
       if (android.os.Build.VERSION.SDK_INT < 17) {
           return
       }
-      var friendlyName: String = Settings.Secure.getString(context.getContentResolver(), "bluetooth_name")
+
+      var friendlyName: String = Settings.Global.getString(context.getContentResolver(), "device_name")
       if (friendlyName.isNullOrEmpty()) {
-          friendlyName = Settings.Global.getString(context.getContentResolver(), "device_name")
+          friendlyName = android.os.Build.MODEL
       }
       result.success(friendlyName)
     } else if (call.method.equals("getPlatformVersion")) {
